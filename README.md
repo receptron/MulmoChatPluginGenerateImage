@@ -12,6 +12,7 @@ yarn add @mulmochat-plugin/generate-image @mulmochat-plugin/ui-image
 
 ```typescript
 import { plugin } from "@mulmochat-plugin/generate-image";
+import "@mulmochat-plugin/generate-image/style.css";
 
 // Register plugin with MulmoChat
 ```
@@ -20,18 +21,31 @@ import { plugin } from "@mulmochat-plugin/generate-image";
 
 This plugin requires `@mulmochat-plugin/ui-image` as a peer dependency for the view components.
 
-## Configuration
+## Host App Integration
 
-The plugin supports multiple image generation backends:
-- **Google Gemini** (default)
-- **OpenAI**
-- **ComfyUI** (local)
+This plugin calls `context.app.generateImage(toolName, prompt)` to generate images. The host application (MulmoChat) must provide this function via the `ToolContext.app` object.
 
-Configuration options:
-- `backend`: Select the image generation backend
-- `styleModifier`: Additional style to append to all prompts
-- `geminiModel`: Model selection for Gemini backend
-- `openaiModel`: Model selection for OpenAI backend
+The host app is responsible for:
+- Selecting the image generation backend (Google Gemini, OpenAI, ComfyUI, etc.)
+- Configuring API keys and model settings
+- Handling the actual image generation API calls
+
+Example host app implementation:
+
+```typescript
+const context: ToolContext = {
+  app: {
+    generateImage: async (toolName: string, prompt: string) => {
+      // Call your image generation API here
+      const imageData = await yourImageGenerationAPI(prompt);
+      return {
+        message: "Image generated",
+        data: { imageData, prompt },
+      };
+    },
+  },
+};
+```
 
 ## Development
 
