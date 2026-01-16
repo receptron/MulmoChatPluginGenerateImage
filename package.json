@@ -28,7 +28,7 @@
     "@mulmochat-plugin/ui-image": "^0.1.0"
   },
   "devDependencies": {
-    "@mulmochat-plugin/ui-image": "file:../MulmoChatPluginUiImage",
+    "@mulmochat-plugin/ui-image": "^0.1.0",
     "@tailwindcss/vite": "^4.1.18",
     "@typescript-eslint/eslint-plugin": "^8.53.0",
     "@typescript-eslint/parser": "^8.53.0",
