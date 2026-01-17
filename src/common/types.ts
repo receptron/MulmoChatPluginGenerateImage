@@ -8,6 +8,18 @@
 import type { Component } from "vue";
 
 /**
+ * Backend types that plugins can declare they use.
+ * App layer manages actual provider/model settings for each type.
+ */
+export type BackendType =
+  | "textLLM"
+  | "imageGen"
+  | "audio"
+  | "search"
+  | "browse"
+  | "map";
+
+/**
  * Context passed to plugin execute function
  */
 export interface ToolContext {
@@ -158,4 +170,7 @@ export interface ToolPlugin<
 
   /** Optional sample arguments for testing */
   samples?: ToolSample[];
+
+  /** Backend types this plugin uses (e.g., ["textLLM", "imageGen"]) */
+  backends?: BackendType[];
 }

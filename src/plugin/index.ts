@@ -13,15 +13,10 @@
 
 import type { ToolPlugin, ToolContext, ToolResult } from "../common";
 import { TOOL_DEFINITION, TOOL_NAME } from "./tools";
-import type {
-  ImageToolData,
-  GenerateImageArgs,
-  ImageGenerationConfigValue,
-} from "./types";
+import type { ImageToolData, GenerateImageArgs } from "./types";
 import { SAMPLES } from "./samples";
 import View from "./View.vue";
 import Preview from "./Preview.vue";
-import ImageGenerationConfig from "./ImageGenerationConfig.vue";
 
 // ============================================================================
 // Plugin Implementation
@@ -77,15 +72,6 @@ export const plugin: ToolPlugin<ImageToolData, never, GenerateImageArgs> = {
     handleUpload: createUploadedImageResult as any,
   },
   systemPrompt: `When you are talking about places, objects, people, movies, books and other things, you MUST use the ${TOOL_NAME} API to draw pictures to make the conversation more engaging.`,
-  config: {
-    key: "imageGenerationBackend",
-    defaultValue: {
-      backend: "gemini",
-      styleModifier: "",
-      geminiModel: "gemini-2.5-flash-image",
-      openaiModel: "gpt-image-1",
-    } as ImageGenerationConfigValue,
-    component: ImageGenerationConfig,
-  },
+  backends: ["imageGen"],
   samples: SAMPLES,
 };
