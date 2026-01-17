@@ -1,6 +1,6 @@
 {
   "name": "@mulmochat-plugin/generate-image",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Image generation plugin for MulmoChat",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -24,8 +24,8 @@
     "lint": "eslint src demo"
   },
   "peerDependencies": {
-    "vue": "^3.5.0",
-    "@mulmochat-plugin/ui-image": "^0.1.0"
+    "@mulmochat-plugin/ui-image": "^0.1.0",
+    "vue": "^3.5.0"
   },
   "devDependencies": {
     "@mulmochat-plugin/ui-image": "^0.1.0",
@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "^8.53.0",
     "@vitejs/plugin-vue": "^6.0.3",
     "eslint": "^9.39.2",
-    "eslint-plugin-vue": "^10.6.2",
+    "eslint-plugin-vue": "^10.7.0",
     "globals": "^17.0.0",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",
