@@ -119,11 +119,19 @@ export const pluginCore: ToolPluginCore<ImageToolData, never, GenerateImageArgs>
   execute: executeGenerateImage,
   generatingMessage: "Generating image...",
   isEnabled: () => true,
-  fileUpload: {
-    acceptedTypes: ["image/png", "image/jpeg"],
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    handleUpload: createUploadedImageResult as any,
-  },
+  inputHandlers: [
+    {
+      type: "file",
+      acceptedTypes: ["image/png", "image/jpeg"],
+      handleInput: (fileData: string, fileName: string) =>
+        createUploadedImageResult(fileData, fileName, ""),
+    },
+    {
+      type: "clipboard-image",
+      handleInput: (imageData: string) =>
+        createUploadedImageResult(imageData, "clipboard-image.png", ""),
+    },
+  ],
   systemPrompt: `When you are talking about places, objects, people, movies, books and other things, you MUST use the ${TOOL_NAME} API to draw pictures to make the conversation more engaging.`,
   backends: ["imageGen"],
   samples: SAMPLES,
