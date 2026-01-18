@@ -70,7 +70,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { plugin } from "../src/vue";
-import type { ToolResult, ToolSample, ToolPlugin } from "../src/vue";
+import type { ToolResult, ToolSample, ToolPlugin } from "gui-chat-protocol/vue";
 
 // Plugin configuration - cast to base ToolPlugin for generic demo usage
 const currentPlugin = plugin as unknown as ToolPlugin;

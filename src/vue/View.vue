@@ -5,8 +5,9 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import { ImageView } from "@mulmochat-plugin/ui-image";
-import type { ToolResult, ImageToolData } from "./types";
-import { TOOL_NAME } from "../core/plugin";
+import type { ToolResult } from "gui-chat-protocol";
+import type { ImageToolData } from "../core/types";
+import { TOOL_NAME } from "../core/definition";
 
 const props = defineProps<{
   selectedResult: ToolResult<ImageToolData>;
