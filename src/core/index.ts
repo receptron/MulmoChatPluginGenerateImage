@@ -1,44 +1,22 @@
 /**
- * MulmoChat GenerateImage Plugin - Core (Framework-agnostic)
+ * MulmoChat Plugin Core Exports
  *
- * This module exports the core plugin logic without UI components.
- * Import from "@mulmochat-plugin/generate-image" or "@mulmochat-plugin/generate-image/core"
+ * Framework-agnostic types and plugin logic.
+ * Import from "@mulmochat-plugin/generate-image/core"
  */
 
-// Export all types
+// Plugin-specific types
 export type {
-  BackendType,
-  ToolContextApp,
-  ToolContext,
-  ToolResult,
-  ToolResultComplete,
-  JsonSchemaProperty,
-  ToolDefinition,
-  StartApiResponse,
-  ToolSample,
-  InputHandler,
-  FileInputHandler,
-  ClipboardImageInputHandler,
-  UrlInputHandler,
-  TextInputHandler,
-  FileUploadConfig,
-  ConfigValue,
-  ConfigFieldSchema,
-  PluginConfigSchema,
-  ViewComponentProps,
-  PreviewComponentProps,
-  ToolPluginCore,
   ImageToolData,
   GenerateImageArgs,
   ImageGenerationConfigValue,
 } from "./types";
 
-// Export plugin utilities
+// Core plugin
 export {
-  TOOL_NAME,
-  TOOL_DEFINITION,
-  SAMPLES,
-  createUploadedImageResult,
-  executeGenerateImage,
   pluginCore,
+  executeGenerateImage,
+  createUploadedImageResult,
 } from "./plugin";
+export { TOOL_NAME, TOOL_DEFINITION } from "./definition";
+export { SAMPLES } from "./samples";
