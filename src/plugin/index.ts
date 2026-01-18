@@ -32,7 +32,7 @@ const generateImage = async (
     return { message: "generateImage function not available" };
   }
 
-  return context.app.generateImage(context, prompt);
+  return context.app.generateImage(prompt);
 };
 
 // ============================================================================

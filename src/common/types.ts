@@ -17,7 +17,8 @@ export type BackendType =
   | "audio"
   | "search"
   | "browse"
-  | "map";
+  | "map"
+  | "mulmocast";
 
 /**
  * Context passed to plugin execute function
