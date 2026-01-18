@@ -3,14 +3,19 @@ import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "path";
 
-export default defineConfig(({ command }) => ({
-  plugins: command === "serve" ? [vue(), tailwindcss()] : [vue()],
+export default defineConfig({
+  plugins: [vue(), tailwindcss()],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: {
+        index: resolve(__dirname, "src/index.ts"),
+        core: resolve(__dirname, "src/core/index.ts"),
+        vue: resolve(__dirname, "src/vue/index.ts"),
+      },
       name: "MulmoChatPluginGenerateImage",
       formats: ["es", "cjs"],
-      fileName: (format) => `index.${format === "es" ? "js" : "cjs"}`,
+      fileName: (format, entryName) =>
+        `${entryName}.${format === "es" ? "js" : "cjs"}`,
     },
     rollupOptions: {
       external: ["vue", "@mulmochat-plugin/ui-image"],
@@ -25,4 +30,4 @@ export default defineConfig(({ command }) => ({
     },
     cssCodeSplit: false,
   },
-}));
+});

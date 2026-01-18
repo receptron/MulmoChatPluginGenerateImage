@@ -1,15 +1,21 @@
 /**
- * MulmoChat Plugin
+ * MulmoChat GenerateImage Plugin
  *
- * See package.json for plugin details.
+ * Default export is the framework-agnostic core.
+ * For Vue implementation, import from "@mulmochat-plugin/generate-image/vue"
+ *
+ * @example Default (Core - framework-agnostic)
+ * ```typescript
+ * import { pluginCore, TOOL_NAME, ImageToolData } from "@mulmochat-plugin/generate-image";
+ * ```
+ *
+ * @example Vue implementation
+ * ```typescript
+ * import GenerateImagePlugin from "@mulmochat-plugin/generate-image/vue";
+ * import "@mulmochat-plugin/generate-image/style.css";
+ * ```
  */
 
-import "./style.css";
-
-import { plugin } from "./plugin";
-import type { ToolPlugin } from "./common";
-
-export default { plugin: plugin as ToolPlugin };
-
-// Export types for use by other modules
-export type { ImageGenerationConfigValue } from "./plugin/types";
+// Default export is core (framework-agnostic)
+export * from "./core";
+export { pluginCore as default } from "./core";
