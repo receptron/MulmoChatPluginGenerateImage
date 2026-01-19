@@ -1,4 +1,6 @@
-# MulmoChat Plugin
+# @mulmochat-plugin/generate-image
+
+[![npm version](https://badge.fury.io/js/%40mulmochat-plugin%2Fgenerate-image.svg)](https://www.npmjs.com/package/@mulmochat-plugin/generate-image)
 
 A plugin for [MulmoChat](https://github.com/receptron/MulmoChat) - a multi-modal voice chat application with OpenAI's GPT-4 Realtime API.
 
@@ -43,6 +45,14 @@ yarn typecheck
 # Lint
 yarn lint
 ```
+
+## Test Prompts
+
+Try these prompts to test the plugin:
+
+1. "Generate an image of a sunset over mountains"
+2. "Create a picture of a cute robot reading a book"
+3. "Make an image of a futuristic city at night"
 
 ## License
 
