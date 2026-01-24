@@ -304,10 +304,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@mulmochat-plugin/ui-image@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@mulmochat-plugin/ui-image/-/ui-image-0.1.0.tgz#6fb70ce8a467c645515a220e8e9f52893cb1aa48"
-  integrity sha512-dbvRL4lCQ6ZrBnxJgNV3XUR/EgpBnSuNR+Buta5vAaBrbcwGc8dBv7O4Oh/YU6HWRJfdVZD8PlAQO1u6bebvpw==
+"@mulmochat-plugin/ui-image@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@mulmochat-plugin/ui-image/-/ui-image-0.3.0.tgz#3973a10ddc43eedb5487a503aef5631d2f9cd5bd"
+  integrity sha512-InzBl29BwtI6TZaMlKfmYzcX9EgjaJtWg2kxkNuK++h+fb8nsxcGpABQuUSznOtXNVYgx48XQFrYFc1sR+V8aw==
 
 "@napi-rs/wasm-runtime@^1.1.0":
   version "1.1.1"
