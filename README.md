@@ -11,8 +11,11 @@ Generate images using AI based on text prompts. This plugin provides the UI comp
 ## Installation
 
 ```bash
-yarn add @mulmochat-plugin/generate-image @mulmochat-plugin/ui-image
+yarn add @mulmochat-plugin/generate-image @mulmochat-plugin/ui-image gui-chat-protocol
 ```
+
+> `gui-chat-protocol` is a peer dependency — install it alongside the plugin; the host application provides the runtime and this plugin only declares the compatible range.
+
 
 ## Usage
 
