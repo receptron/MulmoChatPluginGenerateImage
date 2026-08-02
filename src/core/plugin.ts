@@ -34,13 +34,16 @@ export function createUploadedImageResult(
 // Execute Function
 // ============================================================================
 
+// context is nullable on purpose: hosts that run the plugin without client-side
+// state (MulmoClaude's server bridge) pass an empty or missing context, and
+// reading through it unguarded threw a TypeError instead of returning a result.
 export const executeGenerateImage = async (
-  context: ToolContext,
+  context: ToolContext | null | undefined,
   args: GenerateImageArgs,
 ): Promise<ToolResult<ImageToolData, never>> => {
   const { prompt } = args;
 
-  if (!context.app?.generateImage) {
+  if (!context?.app?.generateImage) {
     return { message: "generateImage function not available" };
   }
 
