@@ -7,6 +7,7 @@
 
 import type { ToolPluginCore, ToolContext, ToolResult } from "gui-chat-protocol";
 import type { ImageToolData, GenerateImageArgs } from "./types";
+import { isGenerateImageResult } from "./hostResponse";
 import { TOOL_NAME, TOOL_DEFINITION } from "./definition";
 import { SAMPLES } from "./samples";
 
@@ -47,7 +48,12 @@ export const executeGenerateImage = async (
     return { message: "generateImage function not available" };
   }
 
-  return context.app.generateImage(prompt);
+  const result = await context.app.generateImage(prompt);
+  if (!isGenerateImageResult(result)) {
+    return { message: "generateImage returned an unrecognized response" };
+  }
+
+  return result;
 };
 
 // ============================================================================
