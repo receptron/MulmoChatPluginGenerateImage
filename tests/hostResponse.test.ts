@@ -23,10 +23,7 @@ describe("isGenerateImageResult", () => {
   });
 
   test("accepts image data without a prompt", () => {
-    assert.equal(
-      isGenerateImageResult({ message: "Generated", data: { imageData: "base64" } }),
-      true,
-    );
+    assert.equal(isGenerateImageResult({ message: "Generated", data: { imageData: "base64" } }), true);
   });
 
   test("accepts a narrate-only result with no data", () => {
@@ -38,19 +35,12 @@ describe("isGenerateImageResult", () => {
   });
 
   test("rejects jsonData, which this tool never sends to the LLM", () => {
-    assert.equal(
-      isGenerateImageResult({ message: "Generated", jsonData: { a: 1 } }),
-      false,
-    );
+    assert.equal(isGenerateImageResult({ message: "Generated", jsonData: { a: 1 } }), false);
   });
 
   test("rejects values that are not a result object", () => {
     [null, undefined, "ok", 7].forEach((value) => {
-      assert.equal(
-        isGenerateImageResult(value),
-        false,
-        `should reject ${JSON.stringify(value)}`,
-      );
+      assert.equal(isGenerateImageResult(value), false, `should reject ${JSON.stringify(value)}`);
     });
   });
 });

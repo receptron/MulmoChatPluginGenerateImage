@@ -28,18 +28,10 @@ export const plugin: ToolPlugin<ImageToolData, never, GenerateImageArgs> = {
 };
 
 // Plugin-specific types
-export type {
-  ImageToolData,
-  GenerateImageArgs,
-  ImageGenerationConfigValue,
-} from "../core/types";
+export type { ImageToolData, GenerateImageArgs, ImageGenerationConfigValue } from "../core/types";
 
 // Core plugin utilities
-export {
-  pluginCore,
-  executeGenerateImage,
-  createUploadedImageResult,
-} from "../core/plugin";
+export { pluginCore, executeGenerateImage, createUploadedImageResult } from "../core/plugin";
 export { TOOL_NAME, TOOL_DEFINITION } from "../core/definition";
 export { SAMPLES } from "../core/samples";
 
